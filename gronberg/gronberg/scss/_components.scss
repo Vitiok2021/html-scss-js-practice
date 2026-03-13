@@ -1,0 +1,115 @@
+.button {
+  //   background-color: $orangeColor;
+  padding: 1rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 100px;
+  border: 0.0625rem solid $orangeColor;
+  line-height: 1.2;
+  font-size: 1.125rem;
+  color: $orangeColor;
+  transition: background-color 0.3s, color 0.3s;
+  path {
+    stroke: $orangeColor;
+    transition: stroke 0.3s;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $orangeColor;
+      color: #fff;
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+}
+.arrow-link {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 1.125rem;
+  transition: color 0.3s;
+  path {
+    stroke: $textColor;
+    transition: stroke 0.3s;
+  }
+  &--left {
+    flex-direction: row-reverse;
+    svg {
+      rotate: 180deg;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $orangeColor;
+
+      path {
+        stroke: $orangeColor;
+      }
+    }
+  }
+  &--red {
+    color: $orangeColor;
+    path {
+      stroke: $orangeColor;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $textColor;
+        path {
+          stroke: $textColor;
+        }
+      }
+    }
+  }
+}
+.block-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9375rem 1.25rem;
+  &__title {
+    text-transform: uppercase;
+    font-size: 6.25rem;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    span {
+      text-transform: none;
+      color: $orangeColor;
+    }
+    @media (max-width: 991.98px) {
+      font-size: 4.375rem;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 2.375rem;
+    }
+  }
+  &__link {
+  }
+}
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.875rem;
+  &__item {
+  }
+
+  &__link {
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangeColor;
+      }
+    }
+  }
+}
