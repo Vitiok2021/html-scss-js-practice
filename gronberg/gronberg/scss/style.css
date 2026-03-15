@@ -1348,6 +1348,117 @@ body {
   }
 }
 
+.footer {
+  padding-bottom: 50px;
+}
+@media (max-width: 991.98px) {
+  .footer {
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer {
+    padding-bottom: 15px;
+  }
+}
+.footer__container {
+  max-width: 1290px;
+}
+.footer__body {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer__body:not(:last-child) {
+  margin-bottom: 94px;
+}
+@media (max-width: 991.98px) {
+  .footer__body:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__body {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .footer__body:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__content {
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+  }
+}
+.footer__title {
+  color: #db574d;
+  font-size: 100px;
+  line-height: 0.9;
+}
+.footer__title:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media (max-width: 991.98px) {
+  .footer__title {
+    font-size: 70px;
+  }
+}
+@media (max-width: 479.98px) {
+  .footer__title {
+    font-size: 50px;
+  }
+}
+.footer__sub-title {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-left: 16.771488%; /* 80/477 */
+}
+@media (max-width: 767.98px) {
+  .footer__sub-title {
+    margin-left: 0;
+  }
+}
+.menu-footer__title {
+  font-size: 30px;
+  color: #db574d;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.menu-footer__title:not(:last-child) {
+  margin-bottom: 50px;
+}
+@media (max-width: 991.98px) {
+  .menu-footer__title:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .menu-footer__title {
+    font-size: 20px;
+  }
+  .menu-footer__title:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+.menu-footer__item {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.menu-footer__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.menu-footer__link {
+  transition: color 0.3s;
+}
+@media (any-hover: hover) {
+  .menu-footer__link:hover {
+    color: #db574d;
+  }
+}
+
 .button {
   padding: 1rem 1.25rem;
   display: inline-flex;
