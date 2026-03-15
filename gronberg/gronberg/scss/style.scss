@@ -1,6 +1,6 @@
 $textColor: #101010;
 $orangeColor: #db574d;
-$grayColor: rgba(16, 16, 16, 0.6);
+$grayColor: rgba(16, 16, 16, 0.1);
 
 // :root {
 //   --textColor: #101010;
@@ -67,6 +67,8 @@ body {
   &__latest-work {
   }
   &__exhibitions {
+  }
+  &__reviews {
   }
 }
 
@@ -176,7 +178,9 @@ body {
       border: 0.0625rem solid $orangeColor;
       width: 0rem;
       aspect-ratio: 1;
-      transition: width 0.3s, opacity 0.3s;
+      transition:
+        width 0.3s,
+        opacity 0.3s;
     }
   }
 
@@ -191,7 +195,9 @@ body {
     width: 100%;
     height: 100%;
     right: 0;
-    transition: opacity 0.5s, visibility 0.5s;
+    transition:
+      opacity 0.5s,
+      visibility 0.5s;
     top: 0;
     opacity: 0;
     visibility: hidden;
@@ -976,6 +982,206 @@ body {
 }
 
 // ===================================================
+
+.reviews {
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    position: relative;
+    @media (max-width: 991.98px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__content {
+    position: sticky;
+    top: 140px;
+    flex: 1 1 650px;
+    > * {
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: 1430px) {
+      flex: 1 1 550px;
+    }
+    @media (max-width: 991.98px) {
+      flex: 1 1 auto;
+      position: static;
+    }
+  }
+
+  &__title {
+    font-size: 70px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    span {
+      text-transform: none;
+      color: $orangeColor;
+    }
+    @media (max-width: 1430px) {
+      font-size: 56px;
+    }
+    @media (max-width: 991.98px) {
+      br {
+        display: none;
+      }
+    }
+    @media (max-width: 479.98px) {
+      font-size: 42px;
+    }
+  }
+
+  &__sub-title {
+    font-size: 30px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    span {
+      color: $orangeColor;
+    }
+    @media (max-width: 1430px) {
+      font-size: 22px;
+    }
+    @media (max-width: 991.98px) {
+      margin-bottom: 25px;
+
+      br {
+        display: none;
+      }
+    }
+    @media (max-width: 479.98px) {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+  }
+
+  &__items {
+    flex: 1 1 700px;
+    @media (max-width: 1430px) {
+      flex: 1 1 800px;
+    }
+    @media (max-width: 991.98px) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid $grayColor;
+      margin-bottom: 96px;
+      padding-bottom: 96px;
+      @media (max-width: 1430px) {
+        margin-bottom: 55px;
+        padding-bottom: 55px;
+      }
+      @media (max-width: 991.98px) {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+.button {
+  @media (max-width: 479.98px) {
+    width: 100%;
+  }
+}
+.item-reviews {
+  display: flex;
+  gap: 45px;
+  align-items: flex-start;
+  @media (max-width: 479.98px) {
+    gap: 20px;
+  }
+  &__picture {
+    aspect-ratio: 1;
+    width: 120px;
+    flex-shrink: 0;
+    @media (max-width: 479.98px) {
+      width: 70px;
+    }
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    > * {
+      margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 991.98px) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__title {
+    padding-left: 81px;
+    min-height: 51px;
+    font-size: 30px;
+    line-height: 1.2;
+    background: url('../img/reviews/“.svg') left no-repeat;
+    @media (max-width: 1430px) {
+      font-size: 22px;
+    }
+    @media (max-width: 479.98px) {
+      font-size: 18px;
+      background: url('../img/reviews/“.svg') 0 0 / 20px no-repeat;
+      padding-left: 35px;
+      min-height: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    p {
+      line-height: 1.6;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+    @media (max-width: 991.98px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          background-color: $textColor;
+          height: 1px;
+          width: 18px;
+        }
+      }
+    }
+  }
+}
+
 // ===================================================
 // ===================================================
 

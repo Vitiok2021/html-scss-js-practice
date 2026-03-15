@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -1009,10 +1010,228 @@ body {
   }
 }
 
+.reviews__container {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  position: relative;
+}
+@media (max-width: 991.98px) {
+  .reviews__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.reviews__content {
+  position: sticky;
+  top: 140px;
+  flex: 1 1 650px;
+}
+.reviews__content > * {
+  margin-bottom: 16px;
+}
+.reviews__content > *:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 1430px) {
+  .reviews__content {
+    flex: 1 1 550px;
+  }
+}
+@media (max-width: 991.98px) {
+  .reviews__content {
+    flex: 1 1 auto;
+    position: static;
+  }
+}
+.reviews__title {
+  font-size: 70px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.reviews__title span {
+  text-transform: none;
+  color: #db574d;
+}
+@media (max-width: 1430px) {
+  .reviews__title {
+    font-size: 56px;
+  }
+}
+@media (max-width: 991.98px) {
+  .reviews__title br {
+    display: none;
+  }
+}
+@media (max-width: 479.98px) {
+  .reviews__title {
+    font-size: 42px;
+  }
+}
+.reviews__sub-title {
+  font-size: 30px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.reviews__sub-title span {
+  color: #db574d;
+}
+@media (max-width: 1430px) {
+  .reviews__sub-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 991.98px) {
+  .reviews__sub-title {
+    margin-bottom: 25px;
+  }
+  .reviews__sub-title br {
+    display: none;
+  }
+}
+@media (max-width: 479.98px) {
+  .reviews__sub-title {
+    font-size: 18px;
+  }
+}
+.reviews__items {
+  flex: 1 1 700px;
+}
+@media (max-width: 1430px) {
+  .reviews__items {
+    flex: 1 1 800px;
+  }
+}
+@media (max-width: 991.98px) {
+  .reviews__items {
+    flex: 1 1 auto;
+  }
+}
+.reviews__item:not(:last-child) {
+  border-bottom: 1px solid rgba(16, 16, 16, 0.1);
+  margin-bottom: 96px;
+  padding-bottom: 96px;
+}
+@media (max-width: 1430px) {
+  .reviews__item:not(:last-child) {
+    margin-bottom: 55px;
+    padding-bottom: 55px;
+  }
+}
+@media (max-width: 991.98px) {
+  .reviews__item:not(:last-child) {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .button {
+    width: 100%;
+  }
+}
+
+.item-reviews {
+  display: flex;
+  gap: 45px;
+  align-items: flex-start;
+}
+@media (max-width: 479.98px) {
+  .item-reviews {
+    gap: 20px;
+  }
+}
+.item-reviews__picture {
+  aspect-ratio: 1;
+  width: 120px;
+  flex-shrink: 0;
+}
+@media (max-width: 479.98px) {
+  .item-reviews__picture {
+    width: 70px;
+  }
+}
+@media (max-width: 400px) {
+  .item-reviews__picture {
+    display: none;
+  }
+}
+.item-reviews__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item-reviews__body > * {
+  margin-bottom: 24px;
+}
+.item-reviews__body > *:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 991.98px) {
+  .item-reviews__body > * {
+    margin-bottom: 16px;
+  }
+}
+.item-reviews__title {
+  padding-left: 81px;
+  min-height: 51px;
+  font-size: 30px;
+  line-height: 1.2;
+  background: url("../img/reviews/“.svg") left no-repeat;
+}
+@media (max-width: 1430px) {
+  .item-reviews__title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 479.98px) {
+  .item-reviews__title {
+    font-size: 18px;
+    background: url("../img/reviews/“.svg") 0 0/20px no-repeat;
+    padding-left: 35px;
+    min-height: 20px;
+  }
+}
+.item-reviews__text {
+  margin-bottom: 40px;
+}
+.item-reviews__text p {
+  line-height: 1.6;
+}
+.item-reviews__text p:not(:last-child) {
+  margin-bottom: 15px;
+}
+@media (max-width: 991.98px) {
+  .item-reviews__text {
+    margin-bottom: 20px;
+  }
+}
+.item-reviews__author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.item-reviews__author span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.item-reviews__author span:not(:last-child)::after {
+  content: "";
+  background-color: #101010;
+  height: 1px;
+  width: 18px;
+}
+
 .button {
   padding: 1rem 1.25rem;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.625rem;
   border-radius: 100px;
   border: 0.0625rem solid #db574d;
