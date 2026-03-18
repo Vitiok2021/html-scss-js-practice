@@ -299,7 +299,11 @@ body {
       visibility: visible;
     }
   }
+  body {
+    overflow: hidden;
+  }
 }
+
 // ===================================================
 .hero {
   padding-top: 1.4375rem;

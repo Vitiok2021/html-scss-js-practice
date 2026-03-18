@@ -286,6 +286,9 @@ body {
   opacity: 1;
   visibility: visible;
 }
+.menu-open body {
+  overflow: hidden;
+}
 
 .hero {
   padding-top: 1.4375rem;

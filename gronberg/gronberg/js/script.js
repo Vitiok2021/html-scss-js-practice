@@ -5,4 +5,7 @@ function documentAction(e) {
   if (targetElement.closest('.menu__icon')) {
     document.documentElement.classList.toggle('menu-open')
   }
+  if (targetElement.closest('.menu__link')) {
+    document.documentElement.classList.remove('menu-open')
+  }
 }
