@@ -15,16 +15,16 @@
           <nav class="header__menu menu">
             <ul class="menu__list">
               <li class="menu__item">
-                <a href="#" class="menu__link">Home</a>
+                <a href="#home" class="menu__link">Home</a>
               </li>
               <li class="menu__item">
-                <a href="#" class="menu__link">Models</a>
+                <a href="#models" class="menu__link">Models</a>
               </li>
               <li class="menu__item">
-                <a href="#" class="menu__link">Download</a>
+                <a href="#download" class="menu__link">Download</a>
               </li>
               <li class="menu__item">
-                <a href="#" class="menu__link">Video</a>
+                <a href="#video" class="menu__link">Video</a>
               </li>
             </ul>
           </nav>
@@ -32,7 +32,7 @@
         </div>
       </header>
       <main class="page">
-        <section class="page__hero hero">
+        <section class="hero" id="home">
           <div class="hero__container">
             <div class="hero__content">
               <h1 class="hero__title">The Future of Urban Mobility</h1>
@@ -51,7 +51,7 @@
             </figure>
           </div>
         </section>
-        <div class="models">
+        <div class="models" id="models">
           <article class="models__item item-model">
             <div class="item-model__content">
               <h2 class="item-model__title">Classic</h2>
@@ -79,7 +79,7 @@
             <img src="img/models/02.webp" class="item-model__image" alt="model 1" />
           </article>
         </div>
-        <section class="page__download download">
+        <section class="download" id="download">
           <div class="download__container">
             <div class="download__content">
               <h2 class="download__title">Your Ride, Your Way—Powered by the Cowboy App</h2>
@@ -91,8 +91,24 @@
             <img src="img/download/01.webp" class="download__image" alt="image" />
           </div>
         </section>
+        <div class="video" id="video">
+          <iframe
+            class="video__item"
+            src="https://www.youtube.com/embed/5JsX5gyK3QQ?si=ZyTKZoyojNrWdEBW"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__container">
+          <img src="img/logo.png" alt="footer logo" class="footer__logo" />
+          <a href="#home" class="footer__button">Up</a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
