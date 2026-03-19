@@ -25,6 +25,34 @@ body {
 [class*='__container'] {
   padding-inline: clamp(15px, 3vw, 100px);
 }
+
+.button {
+  background-color: #fff;
+  border-radius: 260px;
+  padding-inline: clamp(30px, 3vw, 45px);
+  padding-block: clamp(10px, 1.5vw, 35px);
+  font-size: clamp(16px, 1vw, 32px);
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  &--dark {
+    background-color: #000;
+    color: #fff;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+}
 .wrapper {
   overflow: clip;
   min-height: 100%;
@@ -83,7 +111,7 @@ body {
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
-    @media (width <= 380px) {
+    @media (width <= 400px) {
       align-self: stretch;
     }
     @media (any-hover: hover) {
@@ -115,3 +143,87 @@ body {
     }
   }
 }
+// =================================================
+.page {
+  &__hero {
+  }
+}
+.hero {
+  min-height: 100svh;
+  background-color: #e6dac0;
+  padding-top: clamp(100px, 7.5vw, 200px);
+  display: flex;
+  align-items: flex-end;
+  @media (width <= 630px) {
+    padding-top: 160px;
+  }
+  &__container {
+    display: inline-flex;
+    gap: 30px;
+    align-items: center;
+    @media (width <= 992px) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex-basis: 100px;
+    flex-grow: 1;
+    padding-block: clamp(20px, 2vw, 40px);
+    @media (width <= 992px) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: clamp(30px, 5vw, 128px);
+    &:not(:last-child) {
+      margin-bottom: 0.1875em;
+    }
+  }
+
+  &__text {
+    font-size: clamp(16px, 1vw, 40px);
+    line-height: 1.5;
+    &:not(:last-child) {
+      margin-bottom: 1.6em;
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  &__butttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(10px, 1vw, 28px);
+    @media (width <= 992px) {
+      justify-content: center;
+      align-items: center;
+    }
+    @media (width <= 400px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__button {
+  }
+
+  &__picture {
+    flex-basis: 100px;
+    flex-grow: 1;
+    align-self: flex-end;
+  }
+
+  &__img {
+  }
+}
+
+// =================================================
+// =================================================
+// =================================================
+// =================================================

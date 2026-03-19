@@ -27,6 +27,32 @@ body {
   padding-inline: clamp(15px, 3vw, 100px);
 }
 
+.button {
+  background-color: #fff;
+  border-radius: 260px;
+  padding-inline: clamp(30px, 3vw, 45px);
+  padding-block: clamp(10px, 1.5vw, 35px);
+  font-size: clamp(16px, 1vw, 32px);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+.button--dark {
+  background-color: #000;
+  color: #fff;
+}
+@media (any-hover: hover) {
+  .button--dark:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
 .wrapper {
   overflow: clip;
   min-height: 100%;
@@ -74,7 +100,7 @@ body {
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-@media (width <= 380px) {
+@media (width <= 400px) {
   .header__button {
     align-self: stretch;
   }
@@ -100,4 +126,76 @@ body {
   .menu__link:hover {
     text-decoration: underline;
   }
+}
+
+.hero {
+  min-height: 100svh;
+  background-color: #e6dac0;
+  padding-top: clamp(100px, 7.5vw, 200px);
+  display: flex;
+  align-items: flex-end;
+}
+@media (width <= 630px) {
+  .hero {
+    padding-top: 160px;
+  }
+}
+.hero__container {
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+}
+@media (width <= 992px) {
+  .hero__container {
+    flex-direction: column;
+  }
+}
+.hero__content {
+  flex-basis: 100px;
+  flex-grow: 1;
+  padding-block: clamp(20px, 2vw, 40px);
+}
+@media (width <= 992px) {
+  .hero__content {
+    text-align: center;
+  }
+}
+.hero__title {
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 128px);
+}
+.hero__title:not(:last-child) {
+  margin-bottom: 0.1875em;
+}
+.hero__text {
+  font-size: clamp(16px, 1vw, 40px);
+  line-height: 1.5;
+}
+.hero__text:not(:last-child) {
+  margin-bottom: 1.6em;
+}
+.hero__text p:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+.hero__butttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1vw, 28px);
+}
+@media (width <= 992px) {
+  .hero__butttons {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (width <= 400px) {
+  .hero__butttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.hero__picture {
+  flex-basis: 100px;
+  flex-grow: 1;
+  align-self: flex-end;
 }/*# sourceMappingURL=style.css.map */
