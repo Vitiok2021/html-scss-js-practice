@@ -28,7 +28,8 @@ body {
 }
 
 .button {
-  background-color: #fff;
+  background-color: #f3ecde;
+  color: #000;
   border-radius: 260px;
   padding-inline: clamp(30px, 3vw, 45px);
   padding-block: clamp(10px, 1.5vw, 35px);
@@ -48,7 +49,7 @@ body {
 }
 @media (any-hover: hover) {
   .button--dark:hover {
-    background-color: #fff;
+    background-color: #f3ecde;
     color: #000;
   }
 }
@@ -65,6 +66,7 @@ body {
 
 .header {
   position: fixed;
+  z-index: 99;
   width: 100%;
   top: 0;
   left: 0;
@@ -198,4 +200,57 @@ body {
   flex-basis: 100px;
   flex-grow: 1;
   align-self: flex-end;
+}
+.models {
+  min-height: 100svh;
+  display: flex;
+}
+@media (width <= 768px) {
+  .models {
+    flex-direction: column;
+  }
+}
+.item-model {
+  padding-inline: clamp(15px, 3vw, 100px);
+  padding-top: 50px;
+  padding-bottom: clamp(30px, 3vw, 350px);
+  flex-basis: 50%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+@media (width <= 768px) {
+  .item-model {
+    flex-basis: 50svh;
+  }
+}
+.item-model__content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.item-model__title {
+  font-size: clamp(28px, 3vw, 65px);
+  font-weight: 600;
+}
+.item-model__title:not(:last-child) {
+  margin-bottom: 0.36em;
+}
+.item-model__text p {
+  line-height: 1.5;
+  font-size: clamp(16px, 1vw, 36px);
+}
+.item-model__text p:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+.item-model__text:not(:last-child) {
+  margin-bottom: 1.7em;
+}
+.item-model__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
