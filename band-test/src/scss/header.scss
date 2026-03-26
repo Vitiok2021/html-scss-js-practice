@@ -1,0 +1,56 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  @include adaptiveValue('padding-top', 30, 20);
+  @include adaptiveValue('padding-bottom', 30, 20);
+  background-color: $mainColor;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: toRem(1300);
+  }
+
+  &__logo {
+    color: #fff;
+    font-size: toRem(24);
+    font-weight: 700;
+    z-index: 5;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: toRem(40);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: toRem(30);
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-size: toRem(18);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: toRem(24);
+    }
+  }
+}

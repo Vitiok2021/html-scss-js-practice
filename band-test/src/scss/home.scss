@@ -1,0 +1,468 @@
+.button {
+}
+.title {
+  @include adaptiveValue('font-size', 36, 28);
+  font-weight: 700;
+}
+.hero {
+  position: relative;
+  min-height: toRem(600);
+  display: flex;
+  align-items: center;
+  padding-top: toRem(110);
+  padding-bottom: toRem(40);
+  background: url('../img/hero-bg.jpg') center / cover no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    @include adaptiveValue('font-size', 48, 36);
+    font-weight: 700;
+    color: #fff;
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__subtitle {
+    font-size: toRem(20);
+    color: #fff;
+    &:not(:last-child) {
+      margin-bottom: toRem(30);
+    }
+  }
+
+  &__text {
+    color: #fff;
+    font-size: toRem(16);
+    line-height: 1.5;
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(15);
+      }
+    }
+
+    span {
+      color: #00a0ff;
+    }
+  }
+
+  &__link {
+    color: #00a0ff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__btn {
+    background-color: #fddd14;
+    box-shadow: 0 0 25px 5px rgba(255, 225, 0, 0.4);
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    padding: toRem(15) toRem(30);
+    border-radius: toRem(5);
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      background-color: $btnHoverColor;
+      box-shadow: 0 0 25px 5px rgba(223, 86, 115, 0.6);
+    }
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+}
+// ===================================================================
+
+.concerts {
+  @include adaptiveValue('padding-top', 80, 40);
+  @include adaptiveValue('padding-bottom', 80, 40);
+
+  &__box {
+    background-color: #1a1a20;
+    border-radius: toRem(10);
+
+    @media (max-width: $mobile) {
+      padding: toRem(20); /* Менші відступи на телефоні */
+    }
+  }
+  &__head {
+    border-bottom: toRem(1) solid rgba(255, 255, 255, 0.1);
+    background-color: #1b1e29;
+  }
+  &__title {
+    font-size: toRem(28);
+    @include adaptiveValue('font-size', 28, 24);
+    font-weight: 700;
+    background-color: #1b1e29;
+    padding: 20px;
+    border-bottom: toRem(1) solid rgba(255, 255, 255, 0.1);
+    @media (max-width: $mobile) {
+      background-color: inherit;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse; /* Це зліплює рамки, щоб лінія під рядком була суцільною */
+  }
+
+  &__row {
+    border-bottom: toRem(1) solid rgba(255, 255, 255, 0.1);
+    padding: 0 20px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__col {
+    color: #fff;
+    font-size: toRem(16);
+    padding: toRem(20);
+    text-align: left;
+    vertical-align: middle;
+
+    &:last-child {
+      text-align: right;
+    }
+
+    th {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: toRem(14);
+      font-weight: 500;
+      padding-top: 0;
+    }
+  }
+
+  &__btn {
+    background-color: $btnBgColor;
+    color: #fff;
+    font-size: toRem(14);
+    font-weight: 600;
+    padding: toRem(10) toRem(20);
+    border-radius: toRem(5);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $btnHoverColor;
+    }
+  }
+
+  /* Адаптив: перетворюємо таблицю на блоки для мобілок */
+  @media (max-width: $mobile) {
+    &__table,
+    &__head,
+    &__body,
+    &__row,
+    &__col {
+      display: block;
+    }
+
+    &__head {
+      display: none;
+    }
+
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: toRem(15);
+      padding: toRem(20) 0;
+    }
+
+    &__col {
+      padding: 0;
+      width: 50%;
+
+      &:nth-child(1) {
+        width: 100%;
+        font-weight: 700;
+        font-size: toRem(18);
+      }
+
+      &:nth-child(4) {
+        width: 100%;
+        text-align: left;
+        margin-top: toRem(10);
+      }
+
+      &:last-child {
+        text-align: left;
+      }
+    }
+
+    &__btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+// ===================================================================
+.team {
+  @include adaptiveValue('padding-top', 80, 40);
+  @include adaptiveValue('padding-bottom', 80, 40);
+  &__title {
+    text-align: center;
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 50, 30);
+    }
+  }
+
+  &__items {
+    @include adaptiveValue('padding-left', 30, 0);
+    @include adaptiveValue('padding-right', 30, 0);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.item-team {
+  border: 0.5px solid #616164;
+  background-color: #1a1a20;
+  border-radius: toRem(10);
+  overflow: hidden;
+
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
+  &__name {
+    padding: toRem(20);
+    color: #adb1bc;
+  }
+}
+// ===================================================================
+.history {
+  @include adaptiveValue('padding-top', 80, 40);
+  @include adaptiveValue('padding-bottom', 80, 40);
+  background: #111115 radial-gradient(circle at 80% 50%, rgba(50, 20, 30, 0.4) 0%, rgba(17, 17, 21, 1) 70%);
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 30, 20);
+    }
+  }
+
+  &__content {
+    font-size: toRem(16);
+    line-height: 1.6;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
+  }
+
+  &__image {
+    float: right;
+    width: 40%;
+    aspect-ratio: 16 / 9;
+    margin-left: toRem(40);
+    margin-bottom: toRem(20);
+    object-fit: cover;
+
+    @media (max-width: $tablet) {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: toRem(30);
+    }
+  }
+}
+// ===================================================================
+.contact {
+  @include adaptiveValue('padding-top', 80, 40);
+  @include adaptiveValue('padding-bottom', 80, 40);
+  background: #111115 radial-gradient(circle at 10% 50%, rgba(50, 20, 30, 0.4) 0%, rgba(17, 17, 21, 1) 70%);
+  &__header {
+    text-align: center;
+    @include adaptiveValue('margin-bottom', 50, 30);
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+
+  &__subtitle {
+    color: #adb1bc;
+    font-size: toRem(16);
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(40);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      gap: toRem(30);
+    }
+  }
+
+  &__box {
+    background-color: #1a1a20;
+    border-radius: toRem(10);
+    padding: toRem(30);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__box-title {
+    font-weight: 700;
+    margin-bottom: toRem(20);
+    @include adaptiveValue('font-size', 20, 18);
+  }
+
+  &__map {
+    flex: 1 1 auto;
+    min-height: toRem(250);
+    border-radius: toRem(5);
+    overflow: hidden;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: toRem(20);
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(20);
+
+    @media (max-width: $mobileSmall) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+  }
+
+  &__label {
+    color: #fff;
+    font-size: toRem(14);
+    font-weight: 500;
+  }
+
+  &__input,
+  &__textarea {
+    background-color: #1a1a20;
+    border: toRem(1) solid rgba(255, 255, 255, 0.1);
+    border-radius: toRem(5);
+    padding: toRem(15);
+    color: #fff;
+    font-size: toRem(16);
+    transition: border-color 0.3s ease;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: #ff3b5c;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 toRem(1000) #1a1a20 inset !important;
+      -webkit-text-fill-color: #fff !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: toRem(150);
+    font-family: inherit;
+  }
+
+  &__btn {
+    background-color: $btnBgColor;
+    color: #fff;
+    font-size: toRem(16);
+    font-weight: 600;
+    padding: toRem(15) toRem(30);
+    border-radius: toRem(5);
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+    @media (max-width: $tablet) {
+      margin: 0 auto;
+    }
+
+    &:hover {
+      background-color: $btnHoverColor;
+    }
+
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+  &__message {
+    font-size: toRem(14);
+    font-weight: 500;
+    position: absolute;
+    bottom: toRem(-10);
+    left: 0;
+  }
+}
